@@ -1,3 +1,5 @@
+require("babel-polyfill");
+
 process.env.NODE_ENV = "production";
 
 const express = require("express");
