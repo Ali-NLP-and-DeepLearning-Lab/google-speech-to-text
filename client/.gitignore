@@ -21,15 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # keys
-<<<<<<< HEAD
 **/config.js
 key.json
 ./rootkey.csv
 ./default.pem
 deploy.sh
-=======
-./src/config.js
-key.json
-./rootkey.csv
-./default.pem
->>>>>>> 3dc597aec54a55ce9aaa14b5dbd7cb1df80a8050
