@@ -21,6 +21,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # keys
-onfig.js
+config.js
 key.json
 deploy.sh
