@@ -31,13 +31,10 @@ const cleanUp = jobID => {
   googleStorage.delete(gsPath);
 };
 
-const BUILD_DIR = path.join(__dirname, "..", "build");
-
 app.use(cors({ origin: config.CLIENT_URL }));
 app.use(compression());
 app.use(helmet());
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
-app.use(express.static(BUILD_DIR));
 
 /**
  * take in a file, convert it to FLAC format, send it to google storage,
@@ -56,7 +53,6 @@ app.use("/transcribe", upload.array(), async (req, res) => {
 
     transcribe(jobID, url); // transcribe w/ google's api
   } catch (err) {
-    console.log(err);
     res.status(409).send("failed");
     cleanUp(jobID);
   }
@@ -95,11 +91,11 @@ app.use("/results", async (req, res) => {
  * server the bundled front end
  */
 app.get("*", function(req, res) {
-  res.sendFile(path.join(BUILD_DIR, "index.html"));
+  res.status(404).send();
 });
 
 // start the server
-app.listen(8080, function(err) {
+app.listen(80, function(err) {
   if (err) {
     console.log(err);
     process.exit(1);
