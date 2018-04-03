@@ -23,5 +23,4 @@ yarn-error.log*
 # keys
 onfig.js
 key.json
-./rootkey.csv
-./default.pem
+deploy.sh

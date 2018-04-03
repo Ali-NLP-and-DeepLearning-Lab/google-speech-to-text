@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start":
-      "react-scripts start | nodemon ../server/index --watch ../server/**",
+      "react-scripts start | nodemon ../server/index --watch ../server/src/**",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
