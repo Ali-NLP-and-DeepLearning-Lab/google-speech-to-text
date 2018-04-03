@@ -1,6 +1,4 @@
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "./server/key.json";
-
-// /Users/jtimmons/Downloads/ffmpeg-3.4.2/ffmpeg -i ORTH025_10.26.17.MP3 -c:a flac -ar 16000 -sample_fmt s16 -ac 1 output.flac
+process.env.GOOGLE_APPLICATION_CREDENTIALS = "./key.json";
 
 // Imports the Google Cloud client library
 const speech = require("@google-cloud/speech");

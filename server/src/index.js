@@ -1,7 +1,5 @@
 require("babel-polyfill");
 
-process.env.NODE_ENV = "production";
-
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -14,7 +12,7 @@ const helmet = require("helmet");
 const googleStorage = require("./googleStorage.js");
 const transcribe = require("./transcribe.js");
 const convert = require("./convert.js");
-const config = require("../src/config.js");
+const config = require("./config.js");
 
 const app = express();
 const upload = multer({
@@ -85,13 +83,6 @@ app.use("/results", async (req, res) => {
     // was just nothing here to begin with
     res.status(404).send({ message: "Transcription failed..." });
   }
-});
-
-/**
- * server the bundled front end
- */
-app.get("*", function(req, res) {
-  res.status(404).send();
 });
 
 // start the server
