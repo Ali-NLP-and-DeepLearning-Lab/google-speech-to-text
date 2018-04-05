@@ -51,6 +51,7 @@ export default class App extends Component {
    */
   pollJob = () => {
     if (this.state.converting && this.state.jobID) {
+      console.log("...polling");
       // poll server
       var xhr = new XMLHttpRequest();
       xhr.open("POST", `${config.SERVER_URL}/results`);
@@ -60,7 +61,6 @@ export default class App extends Component {
             // conversion complete, download and stop polling
             const result = JSON.parse(xhr.response);
             const { transcript } = result;
-            console.log(result, transcript);
 
             // download the file transcript
             console.log(transcript);

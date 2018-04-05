@@ -1,4 +1,4 @@
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "./key.json";
+process.env.GOOGLE_APPLICATION_CREDENTIALS = "../key.json";
 
 // Imports the Google Cloud client library
 const speech = require("@google-cloud/speech");

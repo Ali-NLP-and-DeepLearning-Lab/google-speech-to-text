@@ -72,17 +72,22 @@ app.use("/results", async (req, res) => {
   const transcriptFileExists = fs.existsSync(transcriptPath); // transcribed
   const flacFileExists = fs.existsSync(flacPath); // still in storage. transcribing
   if (transcriptFileExists) {
-    res.status(200).send({
+    return res.status(200).send({
       transcript: fs.readFileSync(transcriptPath, { encoding: "utf8" })
     });
     cleanUp(jobID);
   } else if (flacFileExists) {
-    res.status(202).send({ message: "Transcribing..." });
+    return res.status(202).send({ message: "Transcribing..." });
   } else {
     // TODO: be more grandual about whether transcription actually failed, or if there
     // was just nothing here to begin with
-    res.status(404).send({ message: "Transcription failed..." });
+    return res.status(404).send({ message: "Transcription failed..." });
   }
+});
+
+// nothing here
+app.use("*", (req, res) => {
+  res.send(404);
 });
 
 // start the server
