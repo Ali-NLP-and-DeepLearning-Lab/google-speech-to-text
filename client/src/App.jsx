@@ -93,13 +93,17 @@ export default class App extends Component {
         accept="audio/*"
         onDrop={this.sendFiles}
         onClick={e => e.stopPropagation()}
+        className={this.state.converting ? "converting" : null}
       >
         <div style={{ margin: "auto" }}>
           <h1>TRANSCRIBE AUDIO FILES</h1>
-          <label htmlFor="file" onClick={e => e.stopPropagation()}>
-            <strong>Choose a file </strong>
-            or drag it here...
-          </label>
+          {this.state.converting
+            ? <label>Transcribing audio file...</label>
+            : <label htmlFor="file" onClick={e => e.stopPropagation()}>
+                <strong>Choose a file </strong>
+                or drag it here...
+              </label>
+          }
 
           <input
             type="file"

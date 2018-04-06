@@ -1,7 +1,7 @@
 const Storage = require("@google-cloud/storage");
 const shortid = require("shortid");
 
-const config = require("../src/config.js");
+const config = require("../config.js");
 
 const storage = Storage({
   projectId: config.GCLOUD_PROJECT

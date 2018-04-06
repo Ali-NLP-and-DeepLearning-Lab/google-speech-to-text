@@ -11,8 +11,7 @@
     "shortid": "^2.2.8"
   },
   "scripts": {
-    "start":
-      "react-scripts start | nodemon ../server/index --watch ../server/**",
+    "start": "NODE_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

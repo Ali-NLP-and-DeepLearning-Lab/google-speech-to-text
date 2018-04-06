@@ -4,7 +4,7 @@ const shortid = require("shortid");
 const child_process = require("child_process");
 const fs = require("fs");
 
-const config = require("../src/config.js");
+const config = require("../config.js");
 
 /**
  * Converts the client side file to a flac type file, supported by google speech, with ffmpeg

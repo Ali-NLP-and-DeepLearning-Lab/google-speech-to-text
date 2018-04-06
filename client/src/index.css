@@ -44,7 +44,6 @@ input {
 
 #root {
   margin: 5%;
-  border: 2px dashed gray;
   height: 80%;
   background-color: #f3f3f3;
   border-radius: 35px;
@@ -54,12 +53,17 @@ input {
 #root > div {
   width: 100% !important;
   height: 100% !important;
-  border: none !important;
   display: flex;
   flex-direction: column;
+  border: 2px dashed gray;
+  border-radius: 35px !important;
 }
 
 #drop_target {
   align-self: center;
   margin: auto auto;
+}
+
+.converting {
+  border: 2px solid gray !important;
 }

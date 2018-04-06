@@ -21,7 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # keys
-onfig.js
-key.json
+config.js
+keys.json
 ./rootkey.csv
 ./default.pem

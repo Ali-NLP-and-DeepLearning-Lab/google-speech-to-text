@@ -12,7 +12,7 @@ const helmet = require("helmet");
 const googleStorage = require("./googleStorage.js");
 const transcribe = require("./transcribe.js");
 const convert = require("./convert.js");
-const config = require("./config.js");
+const config = require("../config.js");
 
 const app = express();
 const upload = multer({
@@ -91,7 +91,8 @@ app.use("*", (req, res) => {
 });
 
 // start the server
-app.listen(80, function(err) {
+const PORT = process.env.NODE_ENV === "development" ? 9000 : 80;
+app.listen(PORT, function(err) {
   if (err) {
     console.log(err);
     process.exit(1);

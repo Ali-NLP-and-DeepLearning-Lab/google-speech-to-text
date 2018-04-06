@@ -1,4 +1,7 @@
-process.env.GOOGLE_APPLICATION_CREDENTIALS = "../key.json";
+const path = require("path")
+
+const KEY_PATH = path.join(__dirname, "..", "keys.json")
+process.env.GOOGLE_APPLICATION_CREDENTIALS = KEY_PATH;
 
 // Imports the Google Cloud client library
 const speech = require("@google-cloud/speech");
