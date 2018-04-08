@@ -1,5 +1,7 @@
 # google-speech-to-text
 
+Blog post about this: [https://www.joshuatimmons.com/blog/an-app-for-google's-speech-api](https://www.joshuatimmons.com/blog/an-app-for-google's-speech-api)
+
 App for transcribing audio files (of any type) using Google's speech API
 
 Client built with Create-React-App. Uploads an audio file to server, then polls api until transcription is complete.
